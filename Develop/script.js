@@ -42,7 +42,36 @@ function generatePassword(){
     alert('Your password will not contain special characters.')
   }
   
-}
+  if (getNumbers === false && getUppercase === false && getLowercase === false && getSpecial === false) {
+    return 'Please choose a valid character type.'
+  };
+
+  // Concatting the characters into password
+
+  if (getNumbers) {
+    possibleCharacters = possibleCharacters.concat(numCharacters);
+  }
+
+  if (getUppercase) {
+    possibleCharacters = possibleCharacters.concat(uppercaseCharacters);
+  }
+
+  if (getLowercase) {
+    possibleCharacters = possibleCharacters.concat(lowercaseCharacters);
+  } 
+
+  if (getSpecial) {
+    possibleCharacters = possibleCharacters.concat(specialCharacters);
+  }
+
+  let finalPass = '';
+  for (let i = 0; i < numberOfCharacters; i++) {
+    let numberGenerator = [Math.floor(Math.random() * possibleCharacters.length)];
+    finalPassword = finalPassword + possibleCharacters[rng];
+  }
+  return finalPass;
+
+};
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
