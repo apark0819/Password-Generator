@@ -64,7 +64,7 @@ function generatePassword(){
     possibleCharacters = possibleCharacters.concat(specialCharacters);
   }
 
-  let finalPass = '';
+  let finalPass = "";
   for (let i = 0; i < numberOfCharacters; i++) {
     let numberGenerator = [Math.floor(Math.random() * possibleCharacters.length)];
     finalPassword = finalPassword + possibleCharacters[rng];
